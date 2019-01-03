@@ -5,7 +5,7 @@
 4. Tools > Start server
 5. View > Script console  (Ctrl + `)
 
-Open browser > http://localhost:1337
+Open browser by doubleclicking the included HTML file.  
 Enter in commands to Binja.
 
 To manually command Binja from the command line:
