@@ -11,12 +11,21 @@ Enter in commands to Binja.
 To manually command Binja from the command line:
 1. Enter in command line:
 import xmlrpclib
+
 s = xmlrpclib.ServerProxy('http://localhost:1337')
+
 2. Access commands:
+
 s.SetColor('0x0040101b','0xfff000')
+
 s.Jump('0x0040101b')
+
 s.MakeComm('0x0040101b','Test Comment')
+
 s.version()
+
 s.shutdown()
+
 s.system.listMethods()
+
 ['Jump', 'MakeComm', 'SetColor', 'Sync', 'shutdown', 'system.listMethods', 'system.methodHelp', 'system.methodSignature', 'version']
