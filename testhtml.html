@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <p>Make Comment:</p>
+    <input type="text" id="n1"/>
+    <input type="text" id="n2"/>
+    <input type="button"  onclick="makeComment();" value="Update"/>
+
+    <p>Jump:</p>
+    <input type="text" id="n3"/>
+    <input type="button"  onclick="Jump();" value="Update"/>
+
+    <p>Set Color:</p>
+    <input type="text" id="n4"/>
+    <input type="text" id="n5"/>
+    <input type="button"  onclick="SetColor();" value="Update"/>
+
+    <script src="mimic.js"language="javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="jquery.xmlrpc.js"></script>-->
+    <script>
+        function makeComment() {
+            var method = "MakeComm";
+            var request = new XmlRpcRequest("http://localhost:1337/RPC2", method);
+            request.addParam(document.getElementById("n1").value);
+            request.addParam(document.getElementById("n2").value);
+            var response = request.send();
+            // alert(response.parseXML());
+        }
+        function Jump() {
+            var method = "Jump";
+            var request = new XmlRpcRequest("http://localhost:1337/RPC2", method);
+            request.addParam(document.getElementById("n3").value);
+            var response = request.send();
+            // alert(response.parseXML());
+        }
+        function SetColor() {
+            var method = "SetColor";
+            var request = new XmlRpcRequest("http://localhost:1337/RPC2", method);
+            request.addParam(document.getElementById("n4").value);
+            request.addParam(document.getElementById("n5").value);
+            var response = request.send();
+            // alert(response.parseXML());
+        }
+
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>
